@@ -24,6 +24,15 @@
 		});
 	}
 
+	const menuToggle = document.getElementById('menu-toggle');
+	const primaryNav = document.getElementById('primary-nav');
+	if(menuToggle && primaryNav){
+		menuToggle.addEventListener('click', ()=>{
+			const isOpen = primaryNav.classList.toggle('open');
+			menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+		});
+	}
+
 	fetch('/data/projects.json')
 		.then(r=>r.json())
 		.then(projects=>{
