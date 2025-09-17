@@ -1,0 +1,23 @@
+[
+	{
+		"title": "Stumart",
+		"description": "Marketplace to sell used items with CRUD APIs, auth, AI descriptions, search, pagination, and AI-powered filters. Responsive frontend with Next.js and TailwindCSS.",
+		"tags": ["Next.js 12", "Node.js", "Express.js", "MongoDB", "OpenAI", "Redux Toolkit", "TailwindCSS"],
+		"demo": "https://stumart-black.vercel.app/",
+		"repo": "https://github.com/nileshshukla3011/stumart"
+	},
+	{
+		"title": "Cryptoverse",
+		"description": "Responsive app for real-time cryptocurrency analysis and tracking with Context API, CoinGecko and Bing News, and interactive Chart.js visualizations.",
+		"tags": ["React", "JavaScript", "Tailwind CSS", "Context API", "Chart.js", "RapidAPI"],
+		"demo": "https://cryptoverse-theta-ashy.vercel.app/",
+		"repo": "https://github.com/nileshshukla3011/Cryptoverse"
+	},
+	{
+		"title": "RealState",
+		"description": "Real estate marketplace with data-driven listings, advanced sorting and filtering by location, property type, and more.",
+		"tags": ["React", "JavaScript", "Tailwind CSS", "Axios", "Redux"],
+		"demo": "https://real-state-sooty.vercel.app/",
+		"repo": "https://github.com/nileshshukla3011/RealState"
+	}
+]

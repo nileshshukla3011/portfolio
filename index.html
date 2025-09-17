@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Nilesh Kumar Shukla — Portfolio</title>
+	<meta name="description" content="Portfolio of Nilesh Kumar Shukla: projects, experience, and contact." />
+	<link rel="icon" href="/assets/logo.png" type="image/png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+	<script>
+		(function(){
+			try{
+				var savedTheme = localStorage.getItem('theme');
+				if(savedTheme === 'dark' || !savedTheme){
+					document.documentElement.classList.add('dark');
+				}
+			}catch(e){}
+		})();
+	</script>
+	<link rel="stylesheet" href="/styles.css" />
+	<meta property="og:title" content="Nilesh Kumar Shukla — Portfolio" />
+	<meta property="og:description" content="Projects, experience, and contact." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="" />
+	<meta property="og:image" content="/assets/og-image.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+	<header class="site-header">
+		<nav class="container nav">
+			<a class="brand" href="#home"><img class="logo" src="/assets/logo.png" alt="Logo" /><span>Nilesh</span></a>
+			<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☾</button>
+			<ul class="nav-links">
+				<li><a href="#about">About</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#hire">Hire Me</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main id="home">
+		<section class="hero container">
+			<div class="hero-text">
+				<h1>Hi, I'm Nilesh Kumar Shukla</h1>
+				<p class="subtitle">Full‑stack developer crafting reliable, performant web apps.</p>
+				<div class="hero-cta">
+					<a class="button primary" href="#projects">View Projects</a>
+					<a class="button" href="#contact">Contact</a>
+					<a class="button primary" href="#hire">Hire Me</a>
+					<a class="button" href="/assets/resume.pdf" target="_blank" rel="noopener">View Resume</a>
+				</div>
+			</div>
+			<img class="hero-photo" src="/assets/photo_profile.jpg" alt="Portrait of Nilesh" />
+		</section>
+
+		<section id="about" class="section container">
+			<h2>About</h2>
+			<p>As a recent Information Technology graduate from Gautam Buddha University, I am a passionate full-stack developer specializing in React, Next.js, Node.js, and MongoDB[cite: 8, 14, 21]. My professional experience includes increasing user engagement by 21% as a Frontend Developer at Blockchain Council, developing MERN stack applications at VEGFED, and conducting blockchain research at DRDO, where I earned a Letter of Recommendation.
+				My portfolio includes an OpenAI-powered marketplace ('Stumart') and a real-time crypto analysis tool ('Cryptoverse'). A proven leader, I served as Management Lead for the Google Developer Student Club, organizing events for 1,500+ attendees. My strong foundation in DSA is demonstrated by solving over 300 coding problems.</p>
+			<ul class="tags">
+				<li>TypeScript</li>
+				<li>React</li>
+				<li>Node.js</li>
+				<li>Next.js</li>
+				<li>PostgreSQL</li>
+				<li>AWS</li>
+			</ul>
+		</section>
+
+		<section id="projects" class="section container">
+			<h2>Projects</h2>
+			<div id="projects-grid" class="grid"></div>
+		</section>
+
+		<section id="hire" class="section container">
+			<h2>Hire Me</h2>
+			<p>If you’re looking for a developer who ships performant, accessible products with clean architectures, I’d love to help. I’m available for full‑time roles, contract work, and freelance projects.</p>
+			<div class="contact-actions">
+				<a class="button primary" href="mailto:nilesh.shukla47@gmail.com?subject=Hire%20Nilesh%20for%20a%20project&body=Hi%20Nilesh,%20I’d%20like%20to%20discuss%20a%20project%20with%20you.">Email for hiring</a>
+				<a class="button" href="tel:+91-7366866911">Call me</a>
+				<a class="button" href="https://www.linkedin.com/in/nilesh-shukla-02a15299/" target="_blank" rel="noopener">LinkedIn</a>
+			</div>
+		</section>
+
+		<section id="contact" class="section container">
+			<h2>Contact</h2>
+			<p>Want to collaborate or have a question? Reach out.</p>
+			<div class="contact-actions">
+				<a class="button primary" href="mailto:nilesh.shukla47@gmail.com">Email me</a>
+				<a class="button" href="https://www.linkedin.com/in/nilesh-shukla-02a15299/" target="_blank" rel="noopener">LinkedIn</a>
+				<a class="button" href="https://github.com/nileshshukla3011" target="_blank" rel="noopener">GitHub</a>
+				<a class="button" href="https://x.com/nileshshukla30" target="_blank" rel="noopener">Twitter</a>
+				<a class="button" href="tel:+91-7366866911">Phone</a>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p>© <span id="year"></span> Nilesh Kumar Shukla</p>
+		</div>
+	</footer>
+
+	<script src="/scripts.js"></script>
+</body>
+</html>
