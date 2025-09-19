@@ -38,6 +38,7 @@
 			<ul id="primary-nav" class="nav-links">
 				<li><a href="#about">About</a></li>
 				<li><a href="#projects">Projects</a></li>
+				<li><a href="#testimonials">Testimonials</a></li>
 				<li><a href="#hire">Hire Me</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
@@ -61,7 +62,7 @@
 
 		<section id="about" class="section container">
 			<h2>About</h2>
-			<p>As a recent Information Technology graduate from Gautam Buddha University, I am a passionate full-stack developer specializing in React, Next.js, Node.js, and MongoDB[cite: 8, 14, 21]. My professional experience includes increasing user engagement by 21% as a Frontend Developer at Blockchain Council, developing MERN stack applications at VEGFED, and conducting blockchain research at DRDO, where I earned a Letter of Recommendation.
+			<p>As a recent Information Technology graduate from Gautam Buddha University, I am a passionate full-stack developer specializing in React, Next.js, Node.js, and MongoDB. My professional experience includes increasing user engagement by 21% as a Frontend Developer at Blockchain Council, developing MERN stack applications at VEGFED, and conducting blockchain research at DRDO, where I earned a Letter of Recommendation.
 				My portfolio includes an OpenAI-powered marketplace ('Stumart') and a real-time crypto analysis tool ('Cryptoverse'). A proven leader, I served as Management Lead for the Google Developer Student Club, organizing events for 1,500+ attendees. My strong foundation in DSA is demonstrated by solving over 300 coding problems.</p>
 			<ul class="tags">
 				<li>TypeScript</li>
@@ -76,6 +77,50 @@
 		<section id="projects" class="section container">
 			<h2>Projects</h2>
 			<div id="projects-grid" class="grid"></div>
+		</section>
+
+		<section id="testimonials" class="section container">
+			<h2>Testimonials</h2>
+			<p>Share your experience working with me or leave a testimonial about my work.</p>
+			
+			<div class="testimonials-content">
+				<div class="testimonial-form">
+					<h3>Submit a Testimonial</h3>
+					<form id="testimonial-form">
+						<div class="form-group">
+							<label for="name">Your Name</label>
+							<input type="text" id="name" name="name" required>
+						</div>
+						<div class="form-group">
+							<label for="role">Your Role/Company</label>
+							<input type="text" id="role" name="role" placeholder="e.g., Project Manager at ABC Corp">
+						</div>
+						<div class="form-group">
+							<label for="testimonial">Testimonial</label>
+							<textarea id="testimonial" name="testimonial" rows="4" required placeholder="Share your experience working with Nilesh..."></textarea>
+						</div>
+						<div class="form-group">
+							<label for="rating">Rating</label>
+							<select id="rating" name="rating" required>
+								<option value="">Select rating</option>
+								<option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+								<option value="4">⭐⭐⭐⭐ Very Good</option>
+								<option value="3">⭐⭐⭐ Good</option>
+								<option value="2">⭐⭐ Fair</option>
+								<option value="1">⭐ Poor</option>
+							</select>
+						</div>
+						<button type="submit" class="button primary">Submit Testimonial</button>
+					</form>
+				</div>
+				
+				<div class="testimonials-display">
+					<h3>What People Say</h3>
+					<div id="testimonials-list" class="testimonials-grid">
+						<!-- Testimonials will be loaded here -->
+					</div>
+				</div>
+			</div>
 		</section>
 
 		<section id="hire" class="section container">

@@ -51,4 +51,66 @@
 		.catch(()=>{
 			// Silent fail if no data
 		});
+
+	// Testimonials functionality
+	const testimonialForm = document.getElementById('testimonial-form');
+	const testimonialsList = document.getElementById('testimonials-list');
+	
+	// Load testimonials from localStorage
+	const loadTestimonials = () => {
+		const testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
+		if(testimonials.length === 0) {
+			testimonialsList.innerHTML = '<p style="color: var(--muted); text-align: center; padding: 20px;">No testimonials yet. Be the first to share your experience!</p>';
+			return;
+		}
+		
+		testimonialsList.innerHTML = testimonials.map(t => `
+			<div class="testimonial-card">
+				<div class="rating">${'⭐'.repeat(t.rating)}</div>
+				<div class="text">"${t.testimonial}"</div>
+				<div class="author">${t.name}</div>
+				<div class="role">${t.role || ''}</div>
+			</div>
+		`).join('');
+	};
+	
+	// Handle form submission
+	if(testimonialForm) {
+		testimonialForm.addEventListener('submit', (e) => {
+			e.preventDefault();
+			
+			const formData = new FormData(testimonialForm);
+			const testimonial = {
+				name: formData.get('name'),
+				role: formData.get('role'),
+				testimonial: formData.get('testimonial'),
+				rating: parseInt(formData.get('rating')),
+				date: new Date().toISOString()
+			};
+			
+			// Save to localStorage
+			const testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
+			testimonials.unshift(testimonial); // Add to beginning
+			localStorage.setItem('testimonials', JSON.stringify(testimonials));
+			
+			// Reload testimonials
+			loadTestimonials();
+			
+			// Reset form
+			testimonialForm.reset();
+			
+			// Show success message
+			const button = testimonialForm.querySelector('button[type="submit"]');
+			const originalText = button.textContent;
+			button.textContent = 'Thank you! ✓';
+			button.style.background = 'var(--brand)';
+			setTimeout(() => {
+				button.textContent = originalText;
+				button.style.background = '';
+			}, 2000);
+		});
+	}
+	
+	// Load testimonials on page load
+	loadTestimonials();
 })();
