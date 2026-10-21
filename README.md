@@ -1,16 +1,10 @@
-# Personal Portfolio (Starter)
+# Nilesh Kumar Shukla — Portfolio
 
-A fast, responsive, accessible portfolio starter using plain HTML, CSS, and a tiny bit of JS.
+A fast, responsive portfolio in plain HTML, CSS and a little JavaScript. No build step.
 
-## Quick start
+## Local preview
 
-1. Open `index.html` in your browser to preview.
-2. Edit `index.html` and `data/projects.json` with your info.
-3. Optional: serve locally to avoid CORS for JSON fetch.
-
-### Local preview (no install)
-
-- macOS: double-click `index.html` or run a local server:
+The projects are loaded from `data/projects.json`, so serve the folder instead of double-clicking `index.html`:
 
 ```bash
 python3 -m http.server 8000
@@ -18,17 +12,36 @@ python3 -m http.server 8000
 
 Then open `http://localhost:8000`.
 
-## Customize
+## Editing
 
-- Update your name, role, and links in `index.html`.
-- Add projects in `data/projects.json`.
-- Tweak theme colors in `styles.css` under `:root`.
+| What | Where |
+| --- | --- |
+| Name, intro, about, experience | `index.html` |
+| Projects | `data/projects.json`. `featured` are the big cards under **Recent work**; `earlier` are the small cards below them |
+| Mini UI preview on a featured card | the card's `preview` key (`jobbot`, `cms`, `mortuary`, `mgims`, `naturefrost`), drawn in `scripts.js` → `previews` |
+| Headline typing words | `scripts.js` → `words` |
+| Colours and fonts | `styles.css`, under `:root` (light) and `html.dark` (dark, the default) |
+
+A featured project's `demo` and `repo` links are optional: leave them out for private or internal projects and the buttons are hidden.
+
+## Resume requests
+
+The **Request resume** buttons open a short form. The visitor's message is sent to you on WhatsApp (`wa.me`) or by email (`mailto:`). It opens their WhatsApp or email app with the message filled in, so no server or API key is needed. Change the destination in `scripts.js`:
+
+```js
+const CONTACT = {
+	email: 'nilesh.shukla47@gmail.com',
+	whatsapp: '917366866911' // country code + number, no "+"
+};
+```
+
+## Testimonials
+
+Submitted testimonials are stored in the visitor's own browser (`localStorage`). Other visitors don't see them.
 
 ## Deploy
 
-- GitHub Pages: Push to `main`, enable Pages in repo settings.
-- Netlify: Drag & drop the folder or connect repo.
-- Vercel: Import project and deploy.
+Push to `main`; Vercel (or GitHub Pages / Netlify) serves the folder as-is. All paths are relative, so it also works from a sub-path.
 
 ## License
 

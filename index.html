@@ -1,157 +1,267 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Nilesh Kumar Shukla — Portfolio</title>
-	<meta name="description" content="Portfolio of Nilesh Kumar Shukla: projects, experience, and contact." />
-	<link rel="icon" href="/assets/logo.png" type="image/png" />
+	<title>Nilesh Kumar Shukla — Full-stack Developer</title>
+	<meta name="description" content="Nilesh Kumar Shukla, full-stack developer. Hospital software for MGIMS Sevagram, an AI job bot, and web apps built with React, Node.js and Python." />
+	<link rel="icon" href="assets/logo.png" type="image/png" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 	<script>
 		(function(){
 			try{
-				var savedTheme = localStorage.getItem('theme');
-				if(savedTheme === 'dark' || !savedTheme){
-					document.documentElement.classList.add('dark');
+				if(localStorage.getItem('theme') === 'light'){
+					document.documentElement.classList.remove('dark');
 				}
 			}catch(e){}
 		})();
 	</script>
-	<link rel="stylesheet" href="/styles.css" />
-	<meta property="og:title" content="Nilesh Kumar Shukla — Portfolio" />
-	<meta property="og:description" content="Projects, experience, and contact." />
+	<link rel="stylesheet" href="styles.css" />
+	<meta property="og:title" content="Nilesh Kumar Shukla — Full-stack Developer" />
+	<meta property="og:description" content="Hospital software, AI tools and web apps. Projects, experience and contact." />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="" />
-	<meta property="og:image" content="/assets/og-image.png" />
+	<meta property="og:image" content="assets/photo_profile.jpg" />
 	<meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
+	<div class="bg" aria-hidden="true">
+		<div class="blob b1"></div>
+		<div class="blob b2"></div>
+		<div class="blob b3"></div>
+		<div class="grid-lines"></div>
+	</div>
+	<div class="cursor-glow" aria-hidden="true"></div>
+
 	<header class="site-header">
 		<nav class="container nav">
-			<a class="brand" href="#home"><img class="logo" src="/assets/logo.png" alt="Logo" /><span>Nilesh</span></a>
-			<div class="nav-actions">
-				<button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">☰</button>
-				<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☾</button>
-			</div>
+			<a class="brand" href="#home"><img class="logo" src="assets/logo.png" alt="" /><span>Nilesh<em>.</em></span></a>
 			<ul id="primary-nav" class="nav-links">
 				<li><a href="#about">About</a></li>
 				<li><a href="#projects">Projects</a></li>
+				<li><a href="#experience">Experience</a></li>
 				<li><a href="#testimonials">Testimonials</a></li>
-				<li><a href="#hire">Hire Me</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
+			<div class="nav-actions">
+				<button class="button small primary" data-open-resume>Request resume</button>
+				<button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">☀</button>
+				<button id="menu-toggle" class="icon-btn menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">☰</button>
+			</div>
 		</nav>
 	</header>
 
 	<main id="home">
 		<section class="hero container">
 			<div class="hero-text">
-				<h1>Hi, I'm Nilesh Kumar Shukla</h1>
-				<p class="subtitle">Full‑stack developer crafting reliable, performant web apps.</p>
-				<div class="hero-cta">
-					<a class="button primary" href="#projects">View Projects</a>
-					<a class="button" href="#contact">Contact</a>
-					<a class="button primary" href="#hire">Hire Me</a>
-					<a class="button" href="/assets/resume.pdf" target="_blank" rel="noopener">View Resume</a>
+				<p class="pill reveal"><span class="pulse"></span>Open to full-time roles &amp; freelance work</p>
+				<h1 class="reveal">Hi, I'm Nilesh.<br />I build <span class="rotator-line"><span class="gradient-text" id="rotator">hospital software</span><span class="caret" aria-hidden="true">|</span></span></h1>
+				<p class="subtitle reveal">Full-stack developer working across React, Node.js and Python. Lately I've been shipping software for <strong>MGIMS Sevagram</strong>: a complaint management system, a mortuary module and the public website. On the side I built an AI bot that hunts jobs for me.</p>
+				<div class="hero-cta reveal">
+					<a class="button primary" href="#projects">See my work <span aria-hidden="true">→</span></a>
+					<button class="button glow" data-open-resume>Request resume</button>
+					<a class="button ghost" href="#contact">Contact</a>
 				</div>
+				<ul class="hero-stats reveal">
+					<li><strong data-count="5">0</strong><span>recent projects shipped</span></li>
+					<li><strong data-count="300" data-suffix="+">0</strong><span>DSA problems solved</span></li>
+					<li><strong data-count="1500" data-suffix="+">0</strong><span>attendees at events I led</span></li>
+				</ul>
 			</div>
-			<img class="hero-photo" src="/assets/photo_profile.jpg" alt="Portrait of Nilesh" />
+			<div class="hero-visual reveal">
+				<div class="photo-ring">
+					<img class="hero-photo" src="assets/photo_profile.jpg" alt="Portrait of Nilesh Kumar Shukla" />
+				</div>
+				<div class="float-chip c1"><span class="dot green"></span>CMS · SLA on track</div>
+				<div class="float-chip c2"><span class="mono">match</span> 92%</div>
+				<div class="float-chip c3">⚡ React · Node · Python</div>
+			</div>
 		</section>
 
+		<div class="marquee" aria-hidden="true">
+			<div class="marquee-track">
+				<span>React</span><span>TypeScript</span><span>Next.js</span><span>Node.js</span><span>Express</span><span>FastAPI</span><span>Python</span><span>PostgreSQL</span><span>MongoDB</span><span>Tailwind CSS</span><span>Gemini AI</span><span>Playwright</span><span>Vite</span><span>Solidity</span>
+				<span>React</span><span>TypeScript</span><span>Next.js</span><span>Node.js</span><span>Express</span><span>FastAPI</span><span>Python</span><span>PostgreSQL</span><span>MongoDB</span><span>Tailwind CSS</span><span>Gemini AI</span><span>Playwright</span><span>Vite</span><span>Solidity</span>
+			</div>
+		</div>
+
 		<section id="about" class="section container">
-			<h2>About</h2>
-			<p>As a recent Information Technology graduate from Gautam Buddha University, I am a passionate full-stack developer specializing in React, Next.js, Node.js, and MongoDB. My professional experience includes increasing user engagement by 21% as a Frontend Developer at Blockchain Council, developing MERN stack applications at VEGFED, and conducting blockchain research at DRDO, where I earned a Letter of Recommendation.
-				My portfolio includes an OpenAI-powered marketplace ('Stumart') and a real-time crypto analysis tool ('Cryptoverse'). A proven leader, I served as Management Lead for the Google Developer Student Club, organizing events for 1,500+ attendees. My strong foundation in DSA is demonstrated by solving over 300 coding problems.</p>
-			<ul class="tags">
-				<li>TypeScript</li>
-				<li>React</li>
-				<li>Node.js</li>
-				<li>Next.js</li>
-				<li>PostgreSQL</li>
-				<li>AWS</li>
-			</ul>
+			<p class="eyebrow reveal">01 — About</p>
+			<div class="about-grid">
+				<h2 class="reveal">I like turning messy, real-world workflows into software that just works.</h2>
+				<div class="about-text reveal">
+					<p>I'm an Information Technology graduate from Gautam Buddha University and a full-stack developer specialising in React, Next.js, Node.js and databases like PostgreSQL and MongoDB.</p>
+					<p>I've raised user engagement by 21% as a Frontend Developer at Blockchain Council, built MERN applications at VEGFED, and done blockchain research at DRDO, where I earned a Letter of Recommendation. I was also Management Lead for the Google Developer Student Club, organising events for 1,500+ attendees.</p>
+					<ul class="tags">
+						<li>TypeScript</li><li>React</li><li>Next.js</li><li>Node.js</li><li>Express</li><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>MongoDB</li><li>Tailwind</li>
+					</ul>
+				</div>
+			</div>
 		</section>
 
 		<section id="projects" class="section container">
-			<h2>Projects</h2>
+			<p class="eyebrow reveal">02 — Projects</p>
+			<div class="section-head">
+				<h2 class="reveal">Recent work</h2>
+				<p class="muted reveal">Hospital systems, AI tooling and websites I've built recently.</p>
+			</div>
+			<div id="featured-grid" class="bento"></div>
+
+			<h3 class="sub-head reveal">Earlier projects</h3>
 			<div id="projects-grid" class="grid"></div>
 		</section>
 
+		<section id="experience" class="section container">
+			<p class="eyebrow reveal">03 — Experience</p>
+			<h2 class="reveal">Where I've worked</h2>
+			<ol class="timeline">
+				<li class="reveal">
+					<span class="t-when">Now</span>
+					<h3>Full-stack developer · Healthcare projects</h3>
+					<p class="t-org">MGIMS Sevagram</p>
+					<p>Complaint management system, mortuary module and the public website with its admin console.</p>
+				</li>
+				<li class="reveal">
+					<span class="t-when">Frontend</span>
+					<h3>Frontend Developer</h3>
+					<p class="t-org">Blockchain Council</p>
+					<p>Raised user engagement by 21% through frontend improvements.</p>
+				</li>
+				<li class="reveal">
+					<span class="t-when">Full-stack</span>
+					<h3>MERN Stack Developer</h3>
+					<p class="t-org">VEGFED</p>
+					<p>Developed MERN stack applications.</p>
+				</li>
+				<li class="reveal">
+					<span class="t-when">Research</span>
+					<h3>Blockchain Research</h3>
+					<p class="t-org">DRDO</p>
+					<p>Blockchain research. Awarded a Letter of Recommendation.</p>
+				</li>
+				<li class="reveal">
+					<span class="t-when">Leadership</span>
+					<h3>Management Lead</h3>
+					<p class="t-org">Google Developer Student Club, GBU</p>
+					<p>Organised events for 1,500+ attendees.</p>
+				</li>
+			</ol>
+		</section>
+
 		<section id="testimonials" class="section container">
-			<h2>Testimonials</h2>
-			<p>Share your experience working with me or leave a testimonial about my work.</p>
-			
+			<p class="eyebrow reveal">04 — Testimonials</p>
+			<h2 class="reveal">Worked with me?</h2>
+			<p class="muted reveal">Share your experience working with me, or leave a testimonial about my work.</p>
+
 			<div class="testimonials-content">
-				<div class="testimonial-form">
-					<h3>Submit a Testimonial</h3>
+				<div class="glass-card testimonial-form reveal">
+					<h3>Submit a testimonial</h3>
 					<form id="testimonial-form">
 						<div class="form-group">
-							<label for="name">Your Name</label>
-							<input type="text" id="name" name="name" required>
+							<label for="t-name">Your name</label>
+							<input type="text" id="t-name" name="name" required>
 						</div>
 						<div class="form-group">
-							<label for="role">Your Role/Company</label>
-							<input type="text" id="role" name="role" placeholder="e.g., Project Manager at ABC Corp">
+							<label for="t-role">Your role / company</label>
+							<input type="text" id="t-role" name="role" placeholder="e.g., Project Manager at ABC Corp">
 						</div>
 						<div class="form-group">
-							<label for="testimonial">Testimonial</label>
-							<textarea id="testimonial" name="testimonial" rows="4" required placeholder="Share your experience working with Nilesh..."></textarea>
+							<label for="t-text">Testimonial</label>
+							<textarea id="t-text" name="testimonial" rows="4" required placeholder="Share your experience working with Nilesh..."></textarea>
 						</div>
 						<div class="form-group">
-							<label for="rating">Rating</label>
-							<select id="rating" name="rating" required>
+							<label for="t-rating">Rating</label>
+							<select id="t-rating" name="rating" required>
 								<option value="">Select rating</option>
 								<option value="5">⭐⭐⭐⭐⭐ Excellent</option>
-								<option value="4">⭐⭐⭐⭐ Very Good</option>
+								<option value="4">⭐⭐⭐⭐ Very good</option>
 								<option value="3">⭐⭐⭐ Good</option>
 								<option value="2">⭐⭐ Fair</option>
 								<option value="1">⭐ Poor</option>
 							</select>
 						</div>
-						<button type="submit" class="button primary">Submit Testimonial</button>
+						<button type="submit" class="button primary">Submit testimonial</button>
 					</form>
 				</div>
-				
-				<div class="testimonials-display">
-					<h3>What People Say</h3>
-					<div id="testimonials-list" class="testimonials-grid">
-						<!-- Testimonials will be loaded here -->
-					</div>
-				</div>
-			</div>
-		</section>
 
-		<section id="hire" class="section container">
-			<h2>Hire Me</h2>
-			<p>If you’re looking for a developer who ships performant, accessible products with clean architectures, I’d love to help. I’m available for full‑time roles, contract work, and freelance projects.</p>
-			<div class="contact-actions">
-				<a class="button primary" href="mailto:nilesh.shukla47@gmail.com?subject=Hire%20Nilesh%20for%20a%20project&body=Hi%20Nilesh,%20I’d%20like%20to%20discuss%20a%20project%20with%20you.">Email for hiring</a>
-				<a class="button" href="tel:+91-7366866911">Call me</a>
-				<a class="button" href="https://www.linkedin.com/in/nilesh-shukla-02a15299/" target="_blank" rel="noopener">LinkedIn</a>
+				<div class="testimonials-display reveal">
+					<h3>What people say</h3>
+					<div id="testimonials-list" class="testimonials-grid"></div>
+				</div>
 			</div>
 		</section>
 
 		<section id="contact" class="section container">
-			<h2>Contact</h2>
-			<p>Want to collaborate or have a question? Reach out.</p>
-			<div class="contact-actions">
-				<a class="button primary" href="mailto:nilesh.shukla47@gmail.com">Email me</a>
-				<a class="button" href="https://www.linkedin.com/in/nilesh-shukla-02a15299/" target="_blank" rel="noopener">LinkedIn</a>
-				<a class="button" href="https://github.com/nileshshukla3011" target="_blank" rel="noopener">GitHub</a>
-				<a class="button" href="https://x.com/nileshshukla30" target="_blank" rel="noopener">Twitter</a>
-				<a class="button" href="tel:+91-7366866911">Phone</a>
+			<div class="cta-panel reveal">
+				<p class="eyebrow">05 — Contact</p>
+				<h2>Let's build something <span class="gradient-text">people rely on.</span></h2>
+				<p>I'm available for full-time roles, contract work and freelance projects. Want my resume? Send a quick request and it'll reach me on email or WhatsApp.</p>
+				<div class="contact-actions">
+					<button class="button primary" data-open-resume>Request resume</button>
+					<a class="button" href="mailto:nilesh.shukla47@gmail.com?subject=Hire%20Nilesh%20for%20a%20project&amp;body=Hi%20Nilesh%2C%20I%E2%80%99d%20like%20to%20discuss%20a%20project%20with%20you.">Email me</a>
+					<a class="button" href="https://wa.me/917366866911" target="_blank" rel="noopener">WhatsApp</a>
+					<a class="button" href="tel:+917366866911">Call</a>
+				</div>
+				<div class="socials">
+					<a href="https://www.linkedin.com/in/nilesh-shukla-02a15299/" target="_blank" rel="noopener">LinkedIn ↗</a>
+					<a href="https://github.com/nileshshukla3011" target="_blank" rel="noopener">GitHub ↗</a>
+					<a href="https://x.com/nileshshukla30" target="_blank" rel="noopener">X / Twitter ↗</a>
+				</div>
 			</div>
 		</section>
 	</main>
 
 	<footer class="site-footer">
-		<div class="container">
+		<div class="container footer-inner">
 			<p>© <span id="year"></span> Nilesh Kumar Shukla</p>
+			<a href="#home">Back to top ↑</a>
 		</div>
 	</footer>
 
-	<script src="/scripts.js"></script>
+	<!-- Resume request dialog -->
+	<div id="resume-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="resume-title" hidden>
+		<div class="modal-backdrop" data-close-resume></div>
+		<div class="modal-card">
+			<button class="icon-btn modal-close" data-close-resume aria-label="Close">✕</button>
+			<p class="eyebrow">Resume request</p>
+			<h2 id="resume-title">Get my latest resume</h2>
+			<p class="muted">Fill this in and send it on WhatsApp or by email. I'll reply with my resume.</p>
+			<form id="resume-form" novalidate>
+				<div class="form-row">
+					<div class="form-group">
+						<label for="r-name">Your name *</label>
+						<input type="text" id="r-name" name="name" required autocomplete="name" placeholder="Jane Doe">
+					</div>
+					<div class="form-group">
+						<label for="r-company">Company / role</label>
+						<input type="text" id="r-company" name="company" autocomplete="organization" placeholder="Acme Inc. · Hiring Manager">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="r-contact">Your email or phone</label>
+					<input type="text" id="r-contact" name="contact" autocomplete="email" placeholder="So I know where to send it">
+				</div>
+				<div class="form-group">
+					<label for="r-message">Message</label>
+					<textarea id="r-message" name="message" rows="4">Hi Nilesh, I came across your portfolio and would like to request a copy of your resume. Could you please share it with me?</textarea>
+				</div>
+				<p class="form-error" id="resume-error" role="alert"></p>
+				<div class="send-options">
+					<button type="submit" class="button whatsapp" data-channel="whatsapp">
+						<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></svg>
+						Send on WhatsApp
+					</button>
+					<button type="submit" class="button primary" data-channel="email">
+						<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg>
+						Send by email
+					</button>
+				</div>
+				<p class="fine-print">Opens WhatsApp or your email app with the message ready. Just press send.</p>
+			</form>
+		</div>
+	</div>
+
+	<script src="scripts.js"></script>
 </body>
 </html>

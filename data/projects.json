@@ -1,23 +1,75 @@
-[
-	{
-		"title": "Stumart",
-		"description": "Marketplace to sell used items with CRUD APIs, auth, AI descriptions, search, pagination, and AI-powered filters. Responsive frontend with Next.js and TailwindCSS.",
-		"tags": ["Next.js 12", "Node.js", "Express.js", "MongoDB", "OpenAI", "Redux Toolkit", "TailwindCSS"],
-		"demo": "https://stumart-black.vercel.app/",
-		"repo": "https://github.com/nileshshukla3011/stumart"
-	},
-	{
-		"title": "Cryptoverse",
-		"description": "Responsive app for real-time cryptocurrency analysis and tracking with Context API, CoinGecko and Bing News, and interactive Chart.js visualizations.",
-		"tags": ["React", "JavaScript", "Tailwind CSS", "Context API", "Chart.js", "RapidAPI"],
-		"demo": "https://cryptoverse-theta-ashy.vercel.app/",
-		"repo": "https://github.com/nileshshukla3011/Cryptoverse"
-	},
-	{
-		"title": "RealState",
-		"description": "Real estate marketplace with data-driven listings, advanced sorting and filtering by location, property type, and more.",
-		"tags": ["React", "JavaScript", "Tailwind CSS", "Axios", "Redux"],
-		"demo": "https://real-state-sooty.vercel.app/",
-		"repo": "https://github.com/nileshshukla3011/RealState"
-	}
-]
+{
+	"featured": [
+		{
+			"title": "Job Bot",
+			"kicker": "AI job hunter",
+			"status": "Personal tool · 2026",
+			"preview": "jobbot",
+			"description": "A desktop app that finds jobs that fit my resume, explains every decision it makes, and helps me apply. It pulls fresh openings from 140+ company boards and LinkedIn / Naukri alert emails, scores each one with Gemini, drafts cover notes, and auto-fills applications. The final submit is always left to me.",
+			"highlights": ["Gemini scoring with model fallback", "Playwright auto-fill (never auto-submits)", "Per-job decision log + CSV export"],
+			"tags": ["React 19", "FastAPI", "Python", "Gemini", "Playwright", "SQLite"]
+		},
+		{
+			"title": "Complaint Management System",
+			"kicker": "Hospital helpdesk · MGIMS Sevagram",
+			"status": "Running on the hospital network",
+			"preview": "cms",
+			"description": "A Freshdesk / Jira-style ticketing system for MGIMS Sevagram. Staff raise a ticket by department and request type, and agents work their queues against per-priority SLAs. A knowledge base suggests help articles before a ticket is even raised.",
+			"highlights": ["SLA clocks with business hours + breach alerts", "Knowledge base with ticket deflection", "Staff / Agent / Admin roles, automation rules"],
+			"tags": ["React 19", "Tailwind 4", "Node.js 22", "Express 5", "PostgreSQL", "JWT"]
+		},
+		{
+			"title": "Mortuary Management",
+			"kicker": "HIMS module · MGIMS",
+			"status": "Hospital information system",
+			"preview": "mortuary",
+			"description": "The mortuary module of a hospital information system. It has a live dashboard with chamber occupancy, a body board and open alerts. It covers the whole flow: intake, outside-death registration, MLC, autopsy requests, body transfers, family release approvals and chain of custody.",
+			"highlights": ["Live chamber occupancy map", "Autopsy, transfer & release workflows", "REST + GraphQL service integration"],
+			"tags": ["React 18", "Vite", "REST", "GraphQL", "Postman"]
+		},
+		{
+			"title": "MGIMS Sevagram Website",
+			"kicker": "Public website + admin console",
+			"status": "Live preview",
+			"preview": "mgims",
+			"description": "The public website for Mahatma Gandhi Institute of Medical Sciences and Kasturba Hospital, plus an admin console where each department edits its own content. Built to India's UX4G government design handbook, with automated accessibility tests on every push.",
+			"highlights": ["UX4G-compliant, axe-tested accessibility", "Department-level admin console", "Per-page SEO tags, sitemap & CI pipeline"],
+			"tags": ["React 19", "TypeScript", "Vite 8", "Tailwind 4", "React Router 7", "Playwright"],
+			"demo": "https://mgims-frontend.vercel.app",
+			"repo": "https://github.com/nileshshukla3011/mgims-frontend"
+		},
+		{
+			"title": "Nature Frost",
+			"kicker": "Brand website",
+			"status": "Live",
+			"preview": "naturefrost",
+			"description": "A fast, statically exported website for a frozen fruits and vegetables brand, with a product catalogue, a downloadable brochure and a contact flow.",
+			"highlights": ["Static export, SEO sitemap", "Product catalogue + brochure"],
+			"tags": ["Next.js 16", "TypeScript", "Tailwind"],
+			"demo": "https://nature-frost-website.vercel.app",
+			"repo": "https://github.com/nileshshukla3011/nature-frost-website"
+		}
+	],
+	"earlier": [
+		{
+			"title": "Stumart",
+			"description": "Marketplace to sell used items with CRUD APIs, auth, AI descriptions, search, pagination, and AI-powered filters. Responsive frontend with Next.js and TailwindCSS.",
+			"tags": ["Next.js 12", "Node.js", "Express.js", "MongoDB", "OpenAI", "Redux Toolkit", "TailwindCSS"],
+			"repo": "https://github.com/nileshshukla3011/stumart"
+		},
+		{
+			"title": "Cryptoverse",
+			"description": "Responsive app for real-time cryptocurrency analysis and tracking with Context API, CoinGecko and Bing News, and interactive Chart.js visualizations.",
+			"tags": ["React", "JavaScript", "Tailwind CSS", "Context API", "Chart.js", "RapidAPI"],
+			"demo": "https://cryptoverse-theta-ashy.vercel.app/",
+			"repo": "https://github.com/nileshshukla3011/Cryptoverse"
+		},
+		{
+			"title": "RealState",
+			"description": "Real estate marketplace with data-driven listings, advanced sorting and filtering by location, property type, and more.",
+			"tags": ["React", "JavaScript", "Tailwind CSS", "Axios", "Redux"],
+			"demo": "https://real-state-sooty.vercel.app/",
+			"repo": "https://github.com/nileshshukla3011/RealState"
+		}
+	]
+}
