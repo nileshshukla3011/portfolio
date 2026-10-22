@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+/* Dark mode follows the `dark` class on <html> (dark is the default; see index.html). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- Colour tokens (light, then dark) ---------- */
+:root {
+	--bg: #f6f7fb;
+	--bg-2: #ffffff;
+	--surface: rgba(255, 255, 255, 0.7);
+	--surface-2: rgba(15, 23, 42, 0.04);
+	--border: rgba(15, 23, 42, 0.1);
+	--border-strong: rgba(15, 23, 42, 0.18);
+	--text: #0d1222;
+	--muted: #5b6478;
+	--accent-1: #7c3aed;
+	--accent-2: #0891b2;
+	--accent-3: #059669;
+	--blob-opacity: 0.22;
+	--shadow: 0 20px 60px -20px rgba(15, 23, 42, 0.25);
+
+	/* Gradients built from the accents, used through bg-(image:--name) */
+	--gradient: linear-gradient(110deg, var(--accent-1), var(--accent-2) 55%, var(--accent-3));
+	--glow-bg: radial-gradient(circle, color-mix(in srgb, var(--accent-1) 18%, transparent), transparent 65%);
+	--preview-bg:
+		radial-gradient(120% 80% at 0% 0%, color-mix(in srgb, var(--accent-1) 22%, transparent), transparent 60%),
+		radial-gradient(120% 80% at 100% 0%, color-mix(in srgb, var(--accent-2) 18%, transparent), transparent 60%);
+	--scan-bg: linear-gradient(transparent, color-mix(in srgb, var(--accent-2) 12%, transparent), transparent);
+	--site-hero-bg: linear-gradient(120deg, color-mix(in srgb, var(--accent-1) 40%, transparent), color-mix(in srgb, var(--accent-2) 30%, transparent));
+	--timeline-bg: linear-gradient(var(--accent-1), var(--accent-2), var(--accent-3));
+	--cta-bg: radial-gradient(80% 120% at 50% 0%, color-mix(in srgb, var(--accent-1) 25%, transparent), transparent 70%);
+}
+
+html.dark {
+	--bg: #06070c;
+	--bg-2: #0c0e16;
+	--surface: rgba(255, 255, 255, 0.035);
+	--surface-2: rgba(255, 255, 255, 0.05);
+	--border: rgba(255, 255, 255, 0.08);
+	--border-strong: rgba(255, 255, 255, 0.16);
+	--text: #eceef6;
+	--muted: #9399ad;
+	--accent-1: #a78bfa;
+	--accent-2: #22d3ee;
+	--accent-3: #34d399;
+	--blob-opacity: 0.35;
+	--shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.8);
+}
+
+/* Tailwind names for the tokens: bg-page, text-muted, border-line, bg-accent-2 … */
+@theme inline {
+	--color-page: var(--bg);
+	--color-panel: var(--bg-2);
+	--color-surface: var(--surface);
+	--color-surface-2: var(--surface-2);
+	--color-line: var(--border);
+	--color-line-strong: var(--border-strong);
+	--color-ink: var(--text);
+	--color-muted: var(--muted);
+	--color-accent-1: var(--accent-1);
+	--color-accent-2: var(--accent-2);
+	--color-accent-3: var(--accent-3);
+	--color-whatsapp: #25d366;
+	--shadow-soft: var(--shadow);
+}
+
+@theme {
+	--font-sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+	--font-display: 'Space Grotesk', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+
+	/* The layout's breakpoints, used as max-tablet:, max-small:, … */
+	--breakpoint-tiny: 23.75rem; /* 380px */
+	--breakpoint-phone: 32.5rem; /* 520px */
+	--breakpoint-small: 45rem; /* 720px */
+	--breakpoint-tablet: 56.25rem; /* 900px */
+
+	--animate-drift: drift 26s ease-in-out infinite alternate;
+	--animate-shimmer: shimmer 6s linear infinite;
+	--animate-ping-dot: ping-dot 1.8s ease-out infinite;
+	--animate-blink: blink 1s steps(1) infinite;
+	--animate-ring: ring-spin 8s linear infinite;
+	--animate-bob: bob 5s ease-in-out infinite;
+	--animate-marquee: marquee 40s linear infinite;
+	--animate-scan: scan 3.5s linear infinite;
+	--animate-alert: alert-pulse 1.6s ease-in-out infinite;
+	--animate-fade: fade 0.25s ease;
+	--animate-pop: pop 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+
+	@keyframes drift {
+		0% { transform: translate(0, 0) scale(1); }
+		50% { transform: translate(6vw, 8vh) scale(1.12); }
+		100% { transform: translate(-4vw, -6vh) scale(0.95); }
+	}
+	@keyframes shimmer { to { background-position: 200% 0; } }
+	@keyframes ping-dot { to { transform: scale(3); opacity: 0; } }
+	@keyframes blink { 50% { opacity: 0; } }
+	@keyframes ring-spin { to { --angle: 360deg; } }
+	@keyframes bob { 50% { transform: translateY(-10px); } }
+	@keyframes marquee { to { transform: translateX(-50%); } }
+	@keyframes scan { to { top: 100%; } }
+	@keyframes alert-pulse { 50% { box-shadow: 0 0 12px #ef4444; } }
+	@keyframes fade { from { opacity: 0; } }
+	@keyframes pop { from { opacity: 0; transform: translateY(20px) scale(0.96); } }
+}
+
+/* Lets the photo ring's conic gradient rotate smoothly. */
+@property --angle {
+	syntax: '<angle>';
+	initial-value: 0deg;
+	inherits: false;
+}
+
+@layer base {
+	html { scroll-behavior: smooth; }
+	body {
+		background: var(--bg);
+		color: var(--text);
+		line-height: 1.65;
+		overflow-x: hidden;
+		-webkit-font-smoothing: antialiased;
+		transition: background 0.4s ease, color 0.4s ease;
+	}
+	h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; }
+	h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); }
+	::selection { background: var(--accent-1); color: #fff; }
+	:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; }
+}
+
+@layer components {
+	/* Fades content in as it scrolls into view; src/hooks/useReveal.ts adds `in`. */
+	.reveal {
+		opacity: 0;
+		transform: translateY(26px);
+		transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+		transition-delay: var(--d, 0s);
+	}
+	.reveal.in { opacity: 1; transform: none; }
+
+	/* Soft light that follows the pointer (position set from JS). */
+	.cursor-glow { opacity: 0; transition: opacity 0.4s; }
+	@media (hover: hover) {
+		body:hover .cursor-glow { opacity: 1; }
+	}
+}
+
+/* Page width with a 16px gutter on each side. */
+@utility wrap {
+	width: min(1180px, 100% - 32px);
+	margin-inline: auto;
+}
+
+/* Card light and gradient border that follow the pointer (--mx / --my are set from JS). */
+@utility spotlight {
+	&::before, &::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+	&::before {
+		background: radial-gradient(500px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--accent-2) 14%, transparent), transparent 45%);
+	}
+	&::after {
+		padding: 1px;
+		background: radial-gradient(300px circle at var(--mx, 50%) var(--my, 50%), var(--accent-2), transparent 60%);
+		-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+		-webkit-mask-composite: xor;
+		mask-composite: exclude;
+	}
+	&:hover::before, &:hover::after { opacity: 1; }
+}
+
+/* Rotating gradient ring around the profile photo (animate-ring turns it). */
+@utility photo-ring {
+	background: conic-gradient(from var(--angle, 0deg), var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-1));
+}
+
+/* Dotted canvas behind a project preview or screenshot, tinted with the accents. */
+@utility dot-canvas {
+	background-color: color-mix(in srgb, var(--bg) 55%, transparent);
+	background-image: radial-gradient(var(--border-strong) 1px, transparent 1.5px), var(--preview-bg);
+	background-size: 18px 18px, 100% 100%, 100% 100%;
+}
+
+/* Faint grid behind the page, fading out towards the bottom. */
+@utility grid-lines {
+	background-image:
+		linear-gradient(var(--border) 1px, transparent 1px),
+		linear-gradient(90deg, var(--border) 1px, transparent 1px);
+	background-size: 64px 64px;
+	mask-image: radial-gradient(ellipse at 50% 0%, #000 10%, transparent 70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after { animation: none !important; transition: none !important; }
+	.reveal { opacity: 1; transform: none; }
+	html { scroll-behavior: auto; }
+}

@@ -1,6 +1,7 @@
 {
 	"featured": [
 		{
+			"slug": "job-bot",
 			"title": "Job Bot",
 			"kicker": "AI job hunter",
 			"status": "Personal tool · 2026",
@@ -10,6 +11,7 @@
 			"tags": ["React 19", "FastAPI", "Python", "Gemini", "Playwright", "SQLite"]
 		},
 		{
+			"slug": "complaint-management",
 			"title": "Complaint Management System",
 			"kicker": "Hospital helpdesk · MGIMS Sevagram",
 			"status": "Running on the hospital network",
@@ -19,6 +21,7 @@
 			"tags": ["React 19", "Tailwind 4", "Node.js 22", "Express 5", "PostgreSQL", "JWT"]
 		},
 		{
+			"slug": "mortuary",
 			"title": "Mortuary Management",
 			"kicker": "HIMS module · MGIMS",
 			"status": "Hospital information system",
@@ -28,6 +31,7 @@
 			"tags": ["React 18", "Vite", "REST", "GraphQL", "Postman"]
 		},
 		{
+			"slug": "mgims-website",
 			"title": "MGIMS Sevagram Website",
 			"kicker": "Public website + admin console",
 			"status": "Live preview",
@@ -39,6 +43,7 @@
 			"repo": "https://github.com/nileshshukla3011/mgims-frontend"
 		},
 		{
+			"slug": "nature-frost",
 			"title": "Nature Frost",
 			"kicker": "Brand website",
 			"status": "Live",
@@ -52,20 +57,32 @@
 	],
 	"earlier": [
 		{
+			"slug": "stumart",
 			"title": "Stumart",
+			"kicker": "AI-powered campus marketplace",
+			"image": "assets/projects/stumart.jpg",
+			"imageAlt": "Stumart home page with the headline “Simplify your campus life – shop local, buy and sell with ease”",
 			"description": "Marketplace to sell used items with CRUD APIs, auth, AI descriptions, search, pagination, and AI-powered filters. Responsive frontend with Next.js and TailwindCSS.",
 			"tags": ["Next.js 12", "Node.js", "Express.js", "MongoDB", "OpenAI", "Redux Toolkit", "TailwindCSS"],
 			"repo": "https://github.com/nileshshukla3011/stumart"
 		},
 		{
+			"slug": "cryptoverse",
 			"title": "Cryptoverse",
+			"kicker": "Real-time crypto analytics",
+			"image": "assets/projects/cryptoverse.jpg",
+			"imageAlt": "Cryptoverse home page showing global crypto stats: total cryptocurrencies, exchanges, market cap, 24-hour volume and markets",
 			"description": "Responsive app for real-time cryptocurrency analysis and tracking with Context API, CoinGecko and Bing News, and interactive Chart.js visualizations.",
 			"tags": ["React", "JavaScript", "Tailwind CSS", "Context API", "Chart.js", "RapidAPI"],
 			"demo": "https://cryptoverse-theta-ashy.vercel.app/",
 			"repo": "https://github.com/nileshshukla3011/Cryptoverse"
 		},
 		{
+			"slug": "realstate",
 			"title": "RealState",
+			"kicker": "Data-driven property marketplace",
+			"image": "assets/projects/realstate.jpg",
+			"imageAlt": "RealState rental search page with price, BHK, location and stories filters above property listings",
 			"description": "Real estate marketplace with data-driven listings, advanced sorting and filtering by location, property type, and more.",
 			"tags": ["React", "JavaScript", "Tailwind CSS", "Axios", "Redux"],
 			"demo": "https://real-state-sooty.vercel.app/",
