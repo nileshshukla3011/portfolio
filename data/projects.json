@@ -46,7 +46,7 @@
 			"description": "A fast, statically exported website for a frozen fruits and vegetables brand, with a product catalogue, a downloadable brochure and a contact flow.",
 			"highlights": ["Static export, SEO sitemap", "Product catalogue + brochure"],
 			"tags": ["Next.js 16", "TypeScript", "Tailwind"],
-			"demo": "https://nature-frost-website.vercel.app",
+			"demo": "https://naturefrost.com",
 			"repo": "https://github.com/nileshshukla3011/nature-frost-website"
 		}
 	],
