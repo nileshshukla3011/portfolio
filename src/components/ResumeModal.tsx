@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useRef, useState, type FormEvent } from 'react'
+import { useCallback, useRef, useState, type FormEvent } from 'react'
 import { CONTACT } from '../content'
+import { useModal } from '../hooks/useModal'
 import { cx } from '../lib'
 import { buttonClass, Eyebrow, field, IconButton, label } from './ui'
 
@@ -24,35 +25,7 @@ export function ResumeModal({ open, onClose, onSent }: Props) {
 		onClose()
 	}, [onClose])
 
-	useEffect(() => {
-		if (!open) return
-		const lastFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null
-		document.body.classList.add('overflow-hidden')
-		const focusTimer = window.setTimeout(() => nameRef.current?.focus(), 50)
-
-		const onKey = (e: KeyboardEvent) => {
-			if (e.key === 'Escape') close()
-			if (e.key !== 'Tab' || !dialogRef.current) return
-			// keep focus inside the dialog
-			const focusables = [...dialogRef.current.querySelectorAll<HTMLElement>('button, input, textarea, a[href]')]
-			const first = focusables[0]
-			const last = focusables[focusables.length - 1]
-			if (e.shiftKey && document.activeElement === first) {
-				e.preventDefault()
-				last.focus()
-			} else if (!e.shiftKey && document.activeElement === last) {
-				e.preventDefault()
-				first.focus()
-			}
-		}
-		document.addEventListener('keydown', onKey)
-		return () => {
-			window.clearTimeout(focusTimer)
-			document.removeEventListener('keydown', onKey)
-			document.body.classList.remove('overflow-hidden')
-			lastFocus?.focus()
-		}
-	}, [open, close])
+	useModal(open, close, dialogRef, nameRef)
 
 	const onSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()

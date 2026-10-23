@@ -19,6 +19,9 @@ export interface FeaturedProject extends Project {
 	highlights?: string[]
 }
 
+/** Either kind of project, as shown in the shared grid and details dialog. */
+export type AnyProject = Project & Partial<Pick<FeaturedProject, 'status' | 'preview' | 'highlights'>>
+
 export interface ProjectsData {
 	featured: FeaturedProject[]
 	earlier: Project[]
